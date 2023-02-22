@@ -10,4 +10,3 @@ def solution(citations):
         
 
     return answer
-
