@@ -1,23 +1,13 @@
-
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
 def solution(citations):
-    citations.sort(reverse=True)
-    max_h = len(citations)
+    answer = 0
+    for i in range(len(citations),-1,-1):
+        def up(x) :
+            return x>=i
+        c = list(filter(up,citations))
+        if len(c) <= i:
+            answer = len(c)
+            
+        
 
-    for i in range(max_h, -1, -1):
-        higher = sum(map(lambda n: n > i, citations))
-        same = sum(map(lambda n: n == i, citations))
-        if higher + same >= i:
-            return i
+    return answer
 
-    return 0
