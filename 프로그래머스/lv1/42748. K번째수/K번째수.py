@@ -2,10 +2,10 @@ def solution(array, commands):
     answer = []
     
     for i in commands :
-        b=array[i[0]-1:]
-        t=b[:i[1]-i[0]+1]
-        t.sort()
-        y=t[i[2]-1]
+        j=array[i[0]-1:]
+        k=j[:i[1]-i[0]+1]
+        k.sort()
+        y=k[i[2]-1]
         answer.append(y)
     
     
