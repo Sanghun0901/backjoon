@@ -9,7 +9,7 @@ for i in range(num):
 find = []
 
 for i in range(ber):
-    site = input().strip()
+    site = str(input())
     q.append(site)
 
 while q:
