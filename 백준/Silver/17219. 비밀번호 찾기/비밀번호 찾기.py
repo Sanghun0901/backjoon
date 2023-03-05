@@ -1,17 +1,21 @@
 import queue
-
-n, m = map(int, input().split())
-
-q = queue.Queue()
-pw_dict = {}
-
-for i in range(n):
+num, ber = map(int, input().split())
+save = {}
+q = queue.deque([])
+for i in range(num):
     site, pw = input().split()
-    pw_dict[site] = pw
+    save[site] = pw
 
-for i in range(m):
-    q.put(input())
+find = []
 
-while not q.empty():
-    site = q.get()
-    print(pw_dict[site])
+for i in range(ber):
+    site = input().strip()
+    q.append(site)
+
+while q:
+    site = q.popleft()
+    if site in save:
+        find.append(save[site])
+
+for pw in find:
+    print(pw)
